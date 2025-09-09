@@ -94,15 +94,7 @@ public class SoundStreamPlugin : FlutterPlugin,
     // them functionally equivalent. Only one of onAttachedToEngine or registerWith will be called
     // depending on the user's project. onAttachedToEngine or registerWith must both be defined
     // in the same class.
-    companion object {
-        @JvmStatic
-        fun registerWith(registrar: Registrar) {
-            val plugin = SoundStreamPlugin()
-            plugin.currentActivity = registrar.activity()
-            registrar.addRequestPermissionsResultListener(plugin)
-            plugin.onAttachedToEngine(registrar.context(), registrar.messenger())
-        }
-    }
+   
 
     override fun onMethodCall(call: MethodCall, result: Result) {
         try {
